@@ -22,17 +22,23 @@ section {
 }
 
 .banner {
-  background-image: linear-gradient(rgba(0, 0, 0, .6), rgba(49, 168, 221, .2), rgba(0, 0, 0, .6)), url('../images/banner.png');
+  background-image: linear-gradient(
+      rgba(0, 0, 0, .6),
+      rgba(49, 168, 221, .2),
+      rgba(0, 0, 0, .6)
+    ),
+    url('../images/banner.png');
   background-size: cover;
   background-repeat: no-repeat;
-  height: 600px;
-  padding-top: 60px;
+  min-height: 600px;
+  padding: 60px 20px;
   border-bottom: 1px solid #33A8DB80;
 }
 
 .banner .banner-content {
   color: white;
-  width: 600px;
+  width: 90%;
+  max-width: 600px;
   margin: auto;
   text-align: center;
 }
@@ -63,7 +69,6 @@ section {
 }
 
 .banner .logo img {
-  margin: auto;
   width: 100%;
   height: 100%;
   object-fit: contain;
@@ -80,10 +85,12 @@ section {
   border-image: linear-gradient(#3BA1CD, #1572B7);
   border-image-slice: 10;
   border-radius: 30px;
+  cursor: pointer;
 }
 
 #course-content {
-  width: 800px;
+  width: 90%;
+  max-width: 800px;
   text-align: center;
 }
 
@@ -93,7 +100,8 @@ section {
 
 #course-content .modules-list .module {
   color: white;
-  width: 530px;
+  width: 100%;
+  max-width: 530px;
   margin: 0 auto 24px;
   border: 1px solid #33A8DB;
   background-color: #252525;
@@ -107,8 +115,9 @@ section {
 }
 
 #transform-world {
-  height: 560px;
+  min-height: 560px;
   background-size: cover;
+  background-position: center;
   background-image: url("../images/woman-code.png");
   background-attachment: fixed;
   border-top: 1px solid #33A8DB80;
@@ -126,26 +135,117 @@ section {
 
 #professional-challenges {
   text-align: center;
-  width: 800px;
+  width: 90%;
+  max-width: 800px;
 }
 
 #professional-challenges img {
   margin: 32px 0;
+  max-width: 100%;
+  height: auto;
 }
 
 footer {
-  padding: 60px 0;
+  padding: 60px 20px;
   text-align: center;
-  background-image: linear-gradient(rgba(50, 168, 219, .0), rgba(50, 168, 219, .2));
+  background-image: linear-gradient(
+    rgba(50, 168, 219, .0),
+    rgba(50, 168, 219, .2)
+  );
   border-top: 1px solid #33A8DB80;
 }
 
 footer .dio-logo {
   width: 300px;
+  max-width: 100%;
 }
 
 footer a {
   color: #33A8DB;
   font-weight: bold;
   text-decoration: none;
+}
+
+/* RESPONSIVIDADE */
+
+@media (max-width: 768px) {
+
+  h2 {
+    font-size: 1.5rem;
+    letter-spacing: 2px;
+  }
+
+  section {
+    margin: 60px auto;
+  }
+
+  .banner {
+    min-height: auto;
+    padding: 40px 20px;
+  }
+
+  .banner .logo {
+    width: 180px;
+    height: 180px;
+  }
+
+  .banner h1 {
+    font-size: 2rem;
+  }
+
+  .banner p {
+    font-size: 1rem;
+  }
+
+  .banner .banner-content button {
+    width: 100%;
+    max-width: 320px;
+    padding: 14px;
+    letter-spacing: 2px;
+  }
+
+  #course-content .modules-list .module {
+    border-radius: 20px;
+    font-size: 0.95rem;
+  }
+
+  #transform-world {
+    min-height: auto;
+    padding: 60px 20px;
+    background-attachment: scroll;
+  }
+
+  #transform-world p {
+    font-size: 2rem;
+    max-width: 100%;
+  }
+
+  footer .dio-logo {
+    width: 200px;
+  }
+}
+
+@media (max-width: 480px) {
+
+  .banner .logo {
+    width: 140px;
+    height: 140px;
+  }
+
+  .banner h1 {
+    font-size: 1.6rem;
+  }
+
+  .banner p {
+    font-size: 0.95rem;
+  }
+
+  #transform-world p {
+    font-size: 1.5rem;
+  }
+
+  #course-content .modules-list .module {
+    padding: 14px;
+    font-size: 0.9rem;
+  }
 }
